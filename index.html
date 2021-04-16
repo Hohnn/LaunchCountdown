@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Frontend Mentor | Launch countdown timer</title>
@@ -16,12 +16,44 @@
 </head>
 <body>
 
-  We're launching soon
+  <h1>We're launching soon</h1>
 
-  Days
-  Hours
-  Minutes
-  Seconds
+  <main>
+
+    <div class="col">
+      <div class="card">
+        <div id="days" class="num">08</div>
+      </div>
+      <div class="desc">DAYS</div>
+    </div>
+
+    <div class="col">
+      <div class="card">
+        <div id="hours" class="num">23</div>
+      </div>
+      <div class="desc">HOURS</div>
+    </div>
+
+    <div class="col">
+      <div class="card">
+        <div id="minutes" class="num">55</div>
+      </div>
+      <div class="desc">MINUTES</div>
+    </div>
+
+    <div class="col">
+      <div class="card">
+        <div id="seconds" class="num">41</div>
+      </div>
+      <div class="desc">SECONDS</div>
+    </div>
+  </main>
+
+  <footer>
+    <a href="#"><img src="/images/icon-facebook.svg" alt="icon-facebook"></a>
+    <a href="#"><img src="/images/icon-pinterest.svg" alt="icon-pinterest"></a>
+    <a href="#"><img src="/images/icon-instagram.svg" alt="icon-instagram"></a>
+  </footer>
   
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
