@@ -8,18 +8,95 @@ body {
     font-size: 14px;
     font-family: 'Red Hat Text', sans-serif;
     letter-spacing: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    margin: 0;
+    padding: 0;
 }
 
 h1 {
     color: white;
     text-transform: uppercase;
     text-align: center;
-    margin-top: 10vw;
+    margin-top: 20vh;
+    font-size: 1.4rem;
 }
 
 main {
     display: flex;
-    width: 800px;
-    margin: 0 auto;
 }
 
+.col {
+    text-align: center;
+    margin: 15px;
+}
+
+.card {
+    width: 150px;
+    height: 150px;
+    background-color: hsl(236, 21%, 26%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0 15px 8px hsl(234, 17%, 12%);
+}
+
+.num {
+    color: hsl(345, 95%, 68%);
+    font-size: 5rem;
+    letter-spacing: 0rem;
+}
+
+.desc {
+    color: hsl(237, 18%, 59%);
+    margin-top: 25px;
+}
+
+footer {
+    background-image: url(./images/pattern-hills.svg);
+    background-size: cover;
+    margin-top: auto;
+    height: 30%;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    margin: 20px;
+}
+
+
+img:hover{
+    filter: invert(59%) sepia(86%) saturate(2860%) hue-rotate(310deg) brightness(100%) contrast(98%);
+}
+
+@media screen and (max-width: 730px) {
+    .num {
+        font-size: 10vw;
+    }
+
+    .desc {
+        font-size: 2vw;
+        letter-spacing: 0.3rem;
+    }
+
+    main {
+        width: 100vw
+    }
+
+    .col {
+        width: 100%;
+        margin: 2vw;
+    }
+
+    .card {
+        width: auto;
+        height: 20vw;
+    }
+}
