@@ -69,5 +69,32 @@ function showDate() {
         secondsIn.innerHTML = '0'+ secondsIn.innerHTML
     }
 
+    /* cardFlip(); */
+
+}
+
+
+/* const coltest = document.getElementById("coltest")
+
+coltest.addEventListener('click', () => {
+    coltest.classList.toggle('flip')
+}) */
+
+const card = document.querySelectorAll('.card')
+
+
+
+for (let i = 0; i < card.length; i++) {
+    card[i].addEventListener('click', () => {
+        card[i].classList.toggle('flip')
+        console.log(card[i])        
+    })
+    
+    function cardFlip() {
+        for (let i = 0; i < card.length; i++) {
+            card[5].classList.toggle('flip')
+        }
+        
+    }
 }
 

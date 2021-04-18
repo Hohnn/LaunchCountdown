@@ -32,6 +32,7 @@ main {
 .col {
     text-align: center;
     margin: 15px;
+    
 }
 
 .card {
@@ -43,6 +44,7 @@ main {
     align-items: center;
     border-radius: 8px;
     box-shadow: 0 15px 8px hsl(234, 17%, 12%);
+
 }
 
 .num {
@@ -99,4 +101,94 @@ img:hover{
         width: auto;
         height: 20vw;
     }
+}
+
+
+.flip {
+    transform: rotateX(-180deg);
+}
+
+.card {
+    transition: transform 1s;
+}
+
+#coltest {
+    position: absolute;
+    cursor: pointer;
+    transition: transform 1s;
+    transform-style: preserve-3d;    
+    top: 0;
+    box-shadow: none;
+    z-index: 10;
+}
+
+.haut {
+    transform-origin: bottom;
+    height: 75px;
+    
+}
+.bas {
+    transform-origin: top;
+    height: 75px;
+    z-index: 5;
+    position: relative;
+    overflow: hidden;
+}
+
+.haut2 {
+    height: 75px;
+    position: relative;
+    overflow: hidden;
+    transform-origin: bottom;
+    
+}
+
+
+.col  {
+    perspective: 1000px;
+}
+
+.card_face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow: hidden;  
+}
+
+.card_front {
+    background-color: hsl(235, 21%, 22%);  
+    border-radius: 8px;
+}
+
+.card_back {
+    transform: rotateX(180deg);
+}
+
+.card_face .num1 {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%)
+}
+
+.num2 {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+.num3 {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.haut2 .num {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%)
 }
