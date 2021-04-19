@@ -112,14 +112,13 @@ img:hover{
     transition: transform 1s;
 }
 
-#coltest {
+.sec {
     position: absolute;
     cursor: pointer;
     transition: transform 1s;
     transform-style: preserve-3d;    
     top: 0;
     box-shadow: none;
-    z-index: 10;
 }
 
 .haut {
