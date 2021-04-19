@@ -57,6 +57,8 @@ function showDate() {
     minutesIn.innerHTML = minutesRest
     secondsIn.innerHTML = secondesRest
 
+    let back = secondesRest-1
+
     if ( daysIn.innerHTML < 10 ) {
         daysIn.innerHTML = '0'+ daysIn.innerHTML
     }
@@ -70,51 +72,73 @@ function showDate() {
         secondsIn.innerHTML = '0'+ secondsIn.innerHTML
     }
 
+    if (back == 0) {
+        back = 60
+    }
+
+    
+    refresh();
     
 
     const coltest = document.getElementById("coltest")
     const colSec = document.getElementById("colSec")
+    const flipNumber = document.querySelectorAll('.sec')
+    const cone = document.querySelectorAll('.sec')
+    const cardAdd = document.getElementById("cardAdd")
 
-    /* addCard(); */
-    refresh();
-    setTimeout(addCard(), 1000)
+    addCard();
+    
 
-
-
-    function addCard() {
-        
-        const flipNumber = document.querySelectorAll('.sec')
+    function addCard() {  
+    
         let para = document.createElement("div")
-        para.classList.add("card", "haut", "sec")
-        para.innerHTML = '<div class="card_face card_front"><div class="num num1" id="frontnum">'+(secondesRest)+'</div></div><div class="card_face card_back"><div class="num num2" id="backnum">'+(secondesRest-1)+'</div></div>'
+        para.innerHTML = '<div class="card haut sec" id="coltest"><div class="card_face card_front"><div class="num num1" id="frontnum">'+secondesRest+'</div></div><div class="card_face card_back"><div class="num num2" id="backnum">'+back+'</div></div></div>'
+        //cardAdd.appendChild(para);
+        cardAdd.insertBefore(para, cardAdd.lastElementChild)    
+        //cone[1].children[0].firstElementChild.textContent = secondesRest
+        //console.log(cone)
+    }
 
-        colSec.appendChild(para);
-        const cone = document.querySelectorAll('.sec')
-        cone[1].children[0].firstElementChild.textContent = secondesRest
-        console.log(cone)
-        
-            
-            for (let a = 0; a < flipNumber.length; a++) {               
+    for (let a = 0; a < flipNumber.length; a++) {               
+        console.log(a)
+        //console.log(cone.length)
+        function addcardFlip() {
+            if (cone[a].classList.contains('flip')) {
+            } else {
+                cone[a].classList.toggle('flip')
+                cone[a].classList.toggle('kk')
+                if (cone.length > 3) {
+                cardAdd.removeChild(cardAdd.firstElementChild)
+                cardAdd.lastElementChild.classList.add('z')
+                //setTimeout(cardAdd.insertBefore(cardAdd.lastElementChild, cardAdd.children[2]),1000)
                 
-                function addcardFlip() {
-                    if (cone[a].classList.contains('flip')) {
-                    } else {
-                        cone[a].classList.toggle('flip')
-                        if (cone.length > 3) {
-                        cone[a].parentElement.removeChild(cone[0])
-                        }
-                                                
-                    }
-                           
-                }       
-                addcardFlip();
-        
+                } 
+                                        
+            }
+            //cardAdd.insertBefore(cardAdd.lastElementChild, cardAdd.children[2])
+            //setTimeout(cardAdd.insertBefore(cardAdd.lastElementChild, cardAdd.children[2]),1000)
+            /* if (cardAdd.lastElementChild.classList.contains('gg')) {
+                cardAdd.removeChild(cardAdd.lastElementChild)
+                console.log('oui')
+            }  */
+                    
         }
-
+          
+        addcardFlip();    
+        
     }
 
     
 }
+
+
+
+
+
+
+
+
+
 
        
 /* 
