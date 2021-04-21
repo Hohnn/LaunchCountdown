@@ -117,7 +117,7 @@ img:hover{
     transition: transform 1s;
 }
 
-.sec, .min {
+.sec, .min, .heur {
     position: absolute;
     cursor: pointer;
     transition: transform 1s;
