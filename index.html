@@ -10,7 +10,7 @@
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
+    .attribution { font-size: 11px; text-align: center; position: absolute; bottom: 0;}
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
 </head>
@@ -20,10 +20,21 @@
 
   <main>
 
+
     <div class="col">
-      <div class="card">
-        <div id="days" class="num">08</div>
+      <div class="cardAdd" id="cardAddDays">
+        <div class="card haut Days gg">
+          <div class="card_face card_front">
+            <div class="num num1" id="frontnumDays"></div>
+          </div>
+          <div class="card_face card_back">
+            <div class="num num2" id="backnumDays"></div>
+          </div>
+        </div>
+
       </div>
+      
+
       <div class="desc">DAYS</div>
     </div>
 
@@ -93,7 +104,7 @@
   
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">Hohnn</a>.
   </div>
   <script src="./script.js"></script>
 </body>

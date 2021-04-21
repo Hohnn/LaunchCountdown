@@ -27,16 +27,17 @@ function showDate() {
     let heuresRest = (23 - h) + hl
     let minutesRest = (60 - m) + ml
     let secondesRest = (60 - s) + sl
-    daysIn.innerHTML = Math.abs( joursRest)
+    /* daysIn.innerHTML = Math.abs( joursRest) */
+    joursRest = Math.abs( joursRest) 
     /* hoursIn.innerHTML = heuresRest */
     /* minutesIn.innerHTML = minutesRest
     secondsIn.innerHTML = secondesRest */
 
 
 
-    if ( daysIn.innerHTML < 10 ) {
+    /* if ( daysIn.innerHTML < 10 ) {
         daysIn.innerHTML = '0'+ daysIn.innerHTML
-    }
+    } */
     /* if ( hoursIn.innerHTML < 10 ) {
         hoursIn.innerHTML = '0'+ hoursIn.innerHTML
     } */
@@ -53,6 +54,7 @@ function showDate() {
     if (secondesRest < 11) {
         back = '0'+(secondesRest-1)        
     }
+
     if (minutesRest < 10) {
         minutesRest = '0'+minutesRest    
     }
@@ -60,6 +62,7 @@ function showDate() {
     if (minutesRest < 11) {
         backNum = '0'+(minutesRest-1)        
     }
+
     if (heuresRest < 10) {
         heuresRest = '0'+heuresRest   
     }
@@ -68,10 +71,19 @@ function showDate() {
         backNumHeur2 = '0'+(heuresRest-1)        
     }
 
+    if (joursRest < 10) {
+        joursRest = '0'+joursRest   
+    }
+    let backNumDays2 = joursRest-1
+    if (joursRest < 11) {
+        backNumDays2 = '0'+(joursRest-1)        
+    }
+
     refresh();
     const backnum = document.getElementById("backnum")    
     const backnumMin = document.getElementById("backnumMin")
     const backnumHeur = document.getElementById("backnumHeur")
+    const backnumDays = document.getElementById("backnumDays")
     
     
     
@@ -81,8 +93,46 @@ function showDate() {
     const cardAdd = document.getElementById("cardAdd")
     const cardAddMin = document.getElementById("cardAddMin")
     const cardAddHeur = document.getElementById("cardAddHeur")
+    const cardAddDays = document.getElementById("cardAddDays")
     const coneMin = document.querySelectorAll('.min')
     const coneHeur = document.querySelectorAll('.heur')
+    const coneDays = document.querySelectorAll('.Days')
+
+    // affiche le numéro pour la premiere card
+
+    if (cardAddDays.children.length === 1) {
+        backnumDays.innerHTML = joursRest
+    };
+ 
+    
+    //si le nombre de card est plus de 4, supprime la first
+    if (coneDays.length > 4) {
+        cardAddDays.removeChild(cardAddDays.firstElementChild)      
+        };
+        //loop pour check chaque card
+    for (let a = 0; a < coneDays.length; a++) {
+                  
+         function addcardFlipDays() {
+            //check si les card classe ont flip, pour lancer le reste qu'une fois 
+            if (coneDays[a].classList.contains('flip')) {
+                //si c'est 60 sec ou moins de 2 card ça ajoute et flip                
+            } else if ( heuresRest == 24 || cardAddDays.children.length < 2) {
+                //créer une div
+                let para = document.createElement("div")
+                para.innerHTML = '<div class="card haut heur" id="coltest"><div class="card_face card_front"><div class="num num1" id="frontnum">'+joursRest+'</div></div><div class="card_face card_back"><div class="num num2">'+backNumDays2+'</div></div></div>'
+                //l'ajoute avant la derniere card pour ne pas la voir pop
+                cardAddDays.insertBefore(para, cardAddDays.lastElementChild)
+                //la flip et change le z index pour l'afficher devant
+                coneDays[a].classList.add('flip')
+                //passe la card initiale derriere
+                cardAddDays.lastElementChild.classList.add('z')
+                
+            }; 
+            
+        }; addcardFlipDays();          
+           
+    };
+    //days ^^
 
     // affiche le numéro pour la premiere card
 
