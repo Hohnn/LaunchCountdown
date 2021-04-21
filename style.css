@@ -117,7 +117,7 @@ img:hover{
     transition: transform 1s;
 }
 
-.sec {
+.sec, .min {
     position: absolute;
     cursor: pointer;
     transition: transform 1s;
@@ -128,7 +128,8 @@ img:hover{
 
 .haut {
     transform-origin: bottom;
-    height: 75px;
+    height: 50%;
+    width: 100%;
     
 }
 .bas {
@@ -183,16 +184,10 @@ img:hover{
     left: 50%;
     transform: translate(-50%, -50%)
 }
-.num3 {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -50%)
-}
 
-.haut2 .num {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%, 50%)
+.cardAdd {
+    height: 150px;
+    width: 150px;
+    position: relative;
+    box-shadow: 0 15px 8px hsl(234, 17%, 12%)
 }
