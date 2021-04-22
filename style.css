@@ -31,6 +31,7 @@ h1 {
 
 main {
     display: flex;
+    justify-content: center;
 }
 
 .col {
@@ -40,14 +41,12 @@ main {
 }
 
 .card {
-    width: 150px;
-    height: 150px;
     background-color: hsl(236, 21%, 26%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     border-radius: 8px;
     box-shadow: 0 15px 8px hsl(234, 17%, 12%);
+    transform-origin: bottom;
+    height: 50%;
+    width: 100%;
 
 }
 
@@ -91,6 +90,7 @@ img:hover{
     .desc {
         font-size: 2vw;
         letter-spacing: 0.3rem;
+        width: 100%;
     }
 
     main {
@@ -98,13 +98,12 @@ img:hover{
     }
 
     .col {
-        width: 100%;
-        margin: 2vw;
+        margin: 1vw;
     }
 
-    .card {
-        width: auto;
-        height: 20vw;
+    .cardAdd {
+        width: 22vw !important;
+        height: 22vw !important;
     }
 }
 
@@ -131,19 +130,6 @@ img:hover{
     box-shadow: none;
 }
 
-.haut {
-    transform-origin: bottom;
-    height: 50%;
-    width: 100%;
-    
-}
-.bas {
-    transform-origin: top;
-    height: 75px;
-    z-index: 5;
-    position: relative;
-    overflow: hidden;
-}
 
 .haut2 {
     height: 75px;
